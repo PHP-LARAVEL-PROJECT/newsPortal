@@ -33,11 +33,19 @@ Route:: get('animals', function(){
 })->name('animals');
 
 
-Route:: group(['as'=> 'animals.'], function(){
+Route:: group(['as'=> 'animals.', 'prefix' => 'animals'], function(){
     Route:: get('meat', function(){
         return 'chicken tanduri';
     })->name('meat');
-    Route:: get('sexy girl', function(){
+    Route:: get('sexy-girl', function(){
         return 'hot girls';
     })->name('sexy');
+    Route:: get('ganesh-puti', function(){
+        return 'ganes ko jhat';
+    })->name('ganeshthasni');
 });
+
+
+Route::get('about', function(){
+    return view('about');
+})->name('about');
