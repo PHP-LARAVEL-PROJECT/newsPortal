@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +48,7 @@ Route:: group(['as'=> 'animals.', 'prefix' => 'animals'], function(){
 });
 
 
-Route::get('about', function(){
-    return view('about');
-})->name('about');
+Route::get('about', [TestController::class, 'contact'])->name('about');
+
+
+Route::resource('blog', BlogController::class);
